@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Da acesso a lib através do cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="container">
+        <h1><span class="highlight">Projeto</span> IoT Revolucionário</h1>
+      </div>
+    </div>
+
+   
+    <div class="container">
+      <!-- Gráficos -->
+      <div class="graph">
+        <canvas id="myChart" style="width: 100%; height: 100%"></canvas>
+      </div>
+
+      <div class="graph">
+        <canvas id="myChart2" style="width: 100%; height: 100%"></canvas>
+      </div>
+      <div class="graph">
+        <canvas id="myChart3" style="width: 100%; height: 100%"></canvas>
+      </div>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+<script>
+  const config = { 
+    type: "line", 
+    data: { 
+      labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],  
+      datasets: [ 
+        {
+          label: "Salário Mínimo", 
+          data: [540, 622, 678,724,788,880,937,954,998,1045,1100], 
+          backgroundColor: "#2196F3", 
+          borderColor: "#3F51B5" 
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false 
+    
+    }
+  }
+
+  var myChartLine = new Chart(document.getElementById("myChart"), config); 
+ 
+  
+  const config2 = { 
+    type: "line", 
+    data: { 
+      labels: ["Norte", "Nordeste","Sudeste","Sul","Centro-Oeste" ],  
+      datasets: [ 
+        {
+          label: "Salário Médio", 
+          data: [1.711, 1.539, 2.585,2.499,2.498], 
+          backgroundColor: "#d03030", 
+          borderColor: "#3c0909" 
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false 
+    
+    }
+  }
+var myChartLine = new Chart(document.getElementById("myChart2"), config2)
+
+const config3= { 
+    type: "bar", 
+    data: { 
+      labels: ["Brasil (total)","Norte", "Nordeste","Sudeste","Sul","Centro-Oeste" ],  
+      datasets: [ 
+        {
+          label: "Desemprego por região ( em %)", 
+          data: [11, 10.6, 13.6,11.4,6.8,9.3], 
+          backgroundColor: "#f3c52d", 
+          borderColor: "#6a540e" 
+        }
+      ]
+    },
+    options: {
+      maintainAspectRatio: false 
+    
+    }
+  }
+var myChartLine = new Chart(document.getElementById("myChart3"), config3)
+</script>
